@@ -26,7 +26,7 @@ export default async function Home() {
               Create events easily and stress-free using Evintfy's premiere event 
               planning technology. Get started today planning your dream event!
             </p>
-            <Button size='lg' asChild className="button w-full sm:w-fit">
+            <Button size='lg' asChild className="button w-full sm:w-fit bg-blue-400 hover:bg-blue-600">
               <Link href="#events">
                 Explore Events
               </Link>
