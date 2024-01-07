@@ -3,13 +3,19 @@ import Collection from "@/components/shared/Collection";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllEvents } from "@/lib/actions/event.actions";
+import Search from "@/components/shared/Search";
+import { SearchParamProps } from "@/types";
 
 
-export default async function Home() {
+export default async function Home({ searchParams }: SearchParamProps) {
+  const page = Number(searchParams?.page) || 1;
+  const searchText = (searchParams?.query as string) || '';
+  const category = (searchParams?.category as string) || '';
+
   const events = await getAllEvents({
-    query: '',
-    category: '',
-    page: 1,
+    query: searchText,
+    category,
+    page: page,
     limit: 6
   });
   
@@ -47,7 +53,7 @@ export default async function Home() {
         <h2 className="h2-bold">Trusted by <br /> Thousands of events.</h2>
 
         <div className="flex w-full flex-col gap-5 md:flex-row">
-          Search 
+          <Search /> 
           CategoryFilter
         </div>
 
