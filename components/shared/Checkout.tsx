@@ -33,7 +33,7 @@ const Checkout = ({ event, userId }: { event: IEvent, userId: string }) => {
         await checkoutOrder(order);
     }
   return (
-    <form action={onCheckout} method='post'>
+    <form action={onCheckout} method="post">
         <Button type="submit" role='link' size='lg' className='button sm:w-fit bg-blue-400 hover:bg-blue-600'>
             {event.isFree ? 'Get Tickets' : 'Buy Tickets'}
         </Button>
