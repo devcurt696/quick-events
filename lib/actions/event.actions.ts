@@ -77,7 +77,7 @@ export const getAllEvents = async ({ query, limit = 6, page, category }: GetAllE
 
         return {
             data: JSON.parse(JSON.stringify(events)),
-            totalPage: Math.ceil(eventsCount / limit)
+            totalPages: Math.ceil(eventsCount / limit)
         }
     } catch (error) {
         handleError(error);
